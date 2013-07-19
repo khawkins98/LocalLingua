@@ -11,6 +11,60 @@
     <script src="../js/jquery.js"></script>
 
     <script src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-multiselect.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.multiselect-learn').multiselect({
+          buttonClass: 'btn',
+          buttonWidth: 'auto',
+          buttonContainer: '<div class="btn-group" />',
+          maxHeight: false,
+          buttonText: function(options) {
+            if (options.length == 0) {
+              return 'Languages you want to practice <b class="caret"></b>';
+            }
+            else if (options.length > 3) {
+              return options.length + ' selected  <b class="caret"></b>';
+            }
+            else {
+              var selected = '';
+              options.each(function() {
+                selected += $(this).text() + ', ';
+              });
+              return selected.substr(0, selected.length -2) + ' <b class="caret"></b>';
+            }
+          }
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.multiselect-know').multiselect({
+          buttonClass: 'btn',
+          buttonWidth: 'auto',
+          buttonContainer: '<div class="btn-group" />',
+          maxHeight: false,
+          buttonText: function(options) {
+            if (options.length == 0) {
+              return 'Languages you know <b class="caret"></b>';
+            }
+            else if (options.length > 3) {
+              return options.length + ' selected  <b class="caret"></b>';
+            }
+            else {
+              var selected = '';
+              options.each(function() {
+                selected += $(this).text() + ', ';
+              });
+              return selected.substr(0, selected.length -2) + ' <b class="caret"></b>';
+            }
+          }
+        });
+      });
+    </script>
+
 
     <!-- Le styles -->
     <link href="../css/bootstrap.css" rel="stylesheet">
@@ -36,33 +90,36 @@
 
   <body>
 
-    <div class="container">
+    <div class="container text-center">
 
       <h1>Great</h1>
       <p>.</p>
 
       <form style="" method="get" action="/xzy" name="submitbox">
         <div class="language-offered" id="language-field">
-          <label for="edit-field-marker-type-value">Languages you are fluent in?</label>
 
-            <input type="checkbox" name="language" value="english">English<br>
-            <input type="checkbox" name="language" value="spanish">Spanish<br>
-            <input type="checkbox" name="language" value="german">German<br>
-            <input type="checkbox" name="language" value="italian">Italian<br>
-            <input type="checkbox" name="language" value="french">French<br>
-
+          <select class="multiselect-learn" multiple="multiple">
+            <option value="english">English</option>
+            <option value="german">German</option>
+            <option value="spanish">Spanish</option>
+            <option value="italian">Italian</option>
+            <option value="french">French</option>
+          </select>
         </div>
+
+        <br>
 
         <div class="language-desired" id="language-field">
-          <label for="edit-field-marker-type-value">What languages do you want to practice?</label>
-
-            <input type="checkbox" name="language" value="english">English<br>
-            <input type="checkbox" name="language" value="spanish">Spanish<br>
-            <input type="checkbox" name="language" value="german">German<br>
-            <input type="checkbox" name="language" value="italian">Italian<br>
-            <input type="checkbox" name="language" value="french">French<br>
-
+          <select class="multiselect-know" multiple="multiple">
+            <option value="english">English</option>
+            <option value="german">German</option>
+            <option value="spanish">Spanish</option>
+            <option value="italian">Italian</option>
+            <option value="french">French</option>
+          </select>
         </div>
+
+        <br>
 
         <div class="views-exposed-widget views-submit-button">
           <input class="ctools-use-ajax ctools-auto-submit-click js-hide btn btn-primary form-submit"
