@@ -6265,8 +6265,8 @@ a.badge:focus {
   font-weight: bold;
   font-size: 1.4em;
   line-height: 1.4em;
-  margin-top: 8%;
-  margin-bottom: 3%;
+  margin-top: 10px;
+  margin-bottom: 5px;
   color: #FFF;
 }
 .caption .location {
