@@ -6272,3 +6272,7 @@ a.badge:focus {
 .caption .location {
   font-weight: normal;
 }
+
+.logo {
+  margin: 10% 0 3%;
+}
