@@ -42,7 +42,7 @@
 
       <!-- Carousel code here -->
 
-      <div id="myCarousel" class="carousel slide">
+      <div id="myCarousel" class="carousel slide"> 
         <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -50,17 +50,51 @@
         </ol>
         <!-- Carousel items -->
         <div class="carousel-inner">
-          <div class="active item">John and Jane chatted in English!</div>
-          <div class="item">Mike and Mark chatted in German!</div>
-          <div class="item">Alice and Alvin chatted in Spanish!</div>
+          <div class="active item">
+            <div>
+              <img class="img-polaroid first" style="width: 200px; height: 180px;" 
+                src="http://lorempixel.com/200/180/people">
+              <img class="img-polaroid second" style="width: 200px; height: 180px;" 
+                src="http://lorempixel.com/200/180/people/10">
+            </div>
+            <div class="caption">
+              John and Jane chatted in English!
+            </div>
+          </div>
+          <div class="item">
+            <div>
+              <img class="img-polaroid first" style="width: 200px; height: 180px;" 
+                src="http://lorempixel.com/200/180/people">
+              <img class="img-polaroid second" style="width: 200px; height: 180px;" 
+                src="http://lorempixel.com/200/180/people/1">
+            </div>
+            <div class="caption">
+              Mike and Mark chatted in German!
+            </div>
+          </div>  
+          <div class="item">
+            <div>
+              <img class="img-polaroid first" style="width: 200px; height: 180px;" 
+                src="http://lorempixel.com/200/180/people/8">
+              <img class="img-polaroid second" style="width: 200px; height: 180px;" 
+                src="http://lorempixel.com/200/180/people/4">
+            </div>
+            <div class="caption">
+              Alice and Alvin chatted in Spanish!
+            </div>
+          </div>
         </div>
       </div>
 
-      <a href="login.html"><button class="btn btn-large btn-primary" type="button">Sign up or login</button></a>
+      <!-- Signup link -->
+
+      <a href="registration_2_login.html">
+        <button class="btn btn-large btn-primary" type="button">Sign up or login</button>
+      </a>
 
       <script type="text/javascript">
       $('.carousel').carousel({
-        interval: 2000
+        interval: 4000
       })
       </script>
 

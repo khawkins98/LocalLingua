@@ -23,8 +23,14 @@
 
 
     <!-- Mapbox stuff -->
-    <script src='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
-    <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+    <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+    <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+
+    <!-- 
+    <script src='../js/mapbox/mapbox.js'></script>
+    <link href='../js/mapbox/mapbox.css' rel='stylesheet' />
+    -->
+
     <!--[if lte IE 8]>
       <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
     <![endif]-->
@@ -47,9 +53,61 @@
       <h1>We found some people for you to chat with</h1>
       <p>.</p>
 
-      <!--
-        Map it!
-      -->
+      <!-- User list -->
+      <table class="table table-striped">
+
+        <tr class="user-result">
+          <td class="user-result-row">
+            <img class="img-polaroid first" style="width: 100px; height: 90px;" 
+              src="http://lorempixel.com/100/90/people/8">
+            <div class="name">
+              Jane Smith
+            </div>
+            <div class="language italian">
+              Italian
+            </div>
+            <div class="location">
+              @Joe Pasta - 50m away
+            </div>
+          </td>  
+        </tr>
+
+        <tr class="user-result">
+          <td class="user-result-row">
+            <img class="img-polaroid first" style="width: 100px; height: 90px;" 
+              src="http://lorempixel.com/100/90/people/8">
+            <div class="name">
+              Jane Smith
+            </div>
+            <div class="language italian">
+              Italian
+            </div>
+            <div class="location">
+              @Joe Pasta - 50m away
+            </div>
+          </td>  
+        </tr>
+
+        <tr class="user-result">
+          <td class="user-result-row">
+            <img class="img-polaroid first" style="width: 100px; height: 90px;" 
+              src="http://lorempixel.com/100/90/people/8">
+            <div class="name">
+              Jane Smith
+            </div>
+            <div class="language italian">
+              Italian
+            </div>
+            <div class="location">
+              @Joe Pasta - 50m away
+            </div>
+          </td>  
+        </tr>
+
+
+      </table>
+
+      <!-- Map it! -->
       <link rel="stylesheet" href="../css/Control.MiniMap.css" />
       <script src"../js/Control.MiniMap.js"></script>
 

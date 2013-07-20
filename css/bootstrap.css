@@ -6200,3 +6200,10 @@ a.badge:focus {
 .btn {
 
 }
+
+
+.carousel-inner > .item > img, 
+.carousel-inner > .item > a > img { 
+  clear: none;
+  display: inline-block;
+}
