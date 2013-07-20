@@ -6257,3 +6257,18 @@ a.badge:focus {
 #language-field .dropdown-menu [class*="span"] {
   margin-left: 0;
 }
+
+
+/* front page captions */
+
+.caption {
+  font-weight: bold;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  margin-top: 2%;
+  margin-bottom: 3%;
+  color: #FFF;
+}
+.caption .location {
+  font-weight: normal;
+}
