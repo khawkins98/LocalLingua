@@ -102,7 +102,28 @@
       <form style="" method="get" action="registration_4_signedup.html" name="submitbox">
         <div class="language-offered" id="language-field">
 
-          <select class="multiselect-learn" multiple="multiple">
+<script>
+var xhr = new XMLHttpRequest();
+//xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs-list');
+xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs/list?code=sampleCode');
+xhr.onreadystatechange = function () {
+  if (this.readyState == 4) {
+    if (typeof cb !== "undefined") {
+      cb(this);
+    }
+    else {
+      jQuery.parseJSON(this.responseText);
+      alert( obj.name === "John" );
+
+//      alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
+    }
+  }
+};
+xhr.send(null);
+</script>          
+
+          <select name="multiselect-learn" class="multiselect-learn" multiple="multiple" required
+            data-validation-required-message="ack">
             <option value="english">English</option>
             <option value="german">German</option>
             <option value="spanish">Spanish</option>
@@ -114,10 +135,8 @@
         <br>
 
         <div class="language-desired" id="language-field">
-          <select class="multiselect-know" multiple="multiple"
-            data-validation-minchecked-minchecked="2"
-  data-validation-minchecked-message="Choose two"
->
+          <select name="multiselect-know" class="multiselect-know" multiple="multiple" required 
+            data-validation-required-message="ack">
             <option value="english">English</option>
             <option value="german">German</option>
             <option value="spanish">Spanish</option>
@@ -139,8 +158,7 @@
         <!-- Form submit -->
 
         <div class="views-exposed-widget views-submit-button">
-          <input class="ctools-use-ajax ctools-auto-submit-click js-hide btn btn-primary form-submit"
-            id="edit-submit-map-2" name="" type="submit" value="Save and finish">
+          <button type="submit" class="btn btn-primary">Save and finish <i class="icon-ok icon-white"></i></button>
         </div>
       </form>
     </div>      
