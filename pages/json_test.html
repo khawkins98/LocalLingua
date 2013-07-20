@@ -51,8 +51,8 @@ xhr.onreadystatechange = function () {
       cb(this);
     }
     else {
-      jQuery.parseJSON(this.responseText);
-      alert( obj.name === "John" );
+      var obj = jQuery.parseJSON(this.responseText);
+      alert( obj );
 
 //      alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
     }
@@ -60,7 +60,7 @@ xhr.onreadystatechange = function () {
 };
 xhr.send(null);
 </script>    
-      
+
 
       <h1>Ooops</h1>
       <p>Something went wrong.</p>
