@@ -6334,3 +6334,8 @@ z-index: 1;
 .user-result .location {
   font-size: .9em;
 }
+
+.user-result button {
+  z-index: 3;
+  position: relative;
+}
