@@ -66,6 +66,7 @@
       multiselectLearn = (getParameter('multiselect-learn') );
       multiselectKnow = (getParameter('multiselect-know') );
 
+
       var xhr = new XMLHttpRequest();
       xhr.open('POST', 'http://api-tandem.rhcloud.com/api/langs/change?code=sampleCode');
       xhr.setRequestHeader("Content-Type", "application/json");
@@ -80,6 +81,22 @@
         }
       };
       xhr.send("{\n    \"offered\": [" + multiselectKnow + "],\n    \"desired\": [" + multiselectLearn + "]\n}");
+
+      /*
+      
+      url = "http://api-tandem.rhcloud.com/api/langs/change?code=sampleCode";
+      urlParams = "{\n    \"offered\": [" + multiselectKnow + "],\n    \"desired\": [" + multiselectLearn + "]\n}";
+
+
+      $.ajax(url,{
+        'data': JSON.stringify(urlParams), //{action:'x',params:['a','b','c']}
+        'type': 'POST',
+        'processData': false,
+        'contentType': 'application/json'
+      });      
+
+      */
+
 
       </script>
 

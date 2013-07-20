@@ -39,12 +39,63 @@
 
     <div class="container text-center">
 
+      <!-- Grab info from the URL -->
+
+      <script type="text/javascript">
+
+      // A handy script to grab url paramaters and return as a comma seperated, if needed
+      function getParameter(paramName) {
+        var searchString = window.location.search.substring(1),
+          i, val, params = searchString.split("&");
+
+        result = '';
+
+        for (i=0;i<params.length;i++) {
+          val = params[i].split("=");
+          if (val[0] == paramName) {
+            if (result == '') {
+              result = unescape(val[1]);
+            } else {
+              result = result + ', ' + unescape(val[1]);
+            }
+          }
+        }
+        return result;
+      }
+
+      messageUser = (getParameter('messageUser') );
+/*
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://api-tandem.rhcloud.com/api/langs/change?code=sampleCode');
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (typeof cb !== "undefined") {
+            cb(this);
+          }
+          else {
+            //alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
+          }
+        }
+      };
+      xhr.send("{\n    \"offered\": [" + multiselectKnow + "],\n    \"desired\": [" + multiselectLearn + "]\n}");
+*/  
+
+      </script>
+
       <!-- Page content here -->
 
       <h1>Make contact</h1>
-      <p>Say hi to @username before stopping by.</p>
+      <p>Say hi to <span class="messageUser"></span> before stopping by.</p>
 
       <!-- Messaging client here -->
+
+      <form style="" method="get" action="registration_4_signedup.html" name="submitbox">
+        <input id="messageText" class="row-fluid" type="text" name="firstname"><br>
+
+        <button type="submit" class="pull-left btn btn-primary">Send <i class="icon-envelope icon-white"></i></button>
+
+      </form>
 
       <div class="messaging-client">Messaging client here</div>
 
