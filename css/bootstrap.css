@@ -6265,7 +6265,7 @@ a.badge:focus {
   font-weight: bold;
   font-size: 1.4em;
   line-height: 1.4em;
-  margin-top: 2%;
+  margin-top: 8%;
   margin-bottom: 3%;
   color: #FFF;
 }
@@ -6275,4 +6275,62 @@ a.badge:focus {
 
 .logo {
   margin: 10% 0 3%;
+}
+
+/* front page carousel */
+.img-polaroid.first {
+  -webkit-transform: rotate(-1.5deg);
+  position: relative;
+  left: 2%;
+  z-index: 2;
+  top: 4px;
+}
+.img-polaroid.second {
+  -webkit-transform: rotate(1.5deg);
+  position: relative;
+  right: 3%;
+top: 6px;
+z-index: 1;
+}
+
+
+.user-result {
+  min-height: 90px;
+}
+
+.user-result img {
+  float: left;
+  margin-right: 2%;
+}
+
+.user-result .name {
+  font-size: 1.2em;
+  font-weight: bold;
+  top: 4px;
+  position: relative;
+  margin-bottom: 4px
+
+}
+
+.user-result .language {
+  
+}
+
+.user-result .language:before {
+  display: block;
+  height: 11px;
+  width: 25px;
+}
+
+.user-result .language.english:before {
+  background: url(../img/languages-mini.png);
+}
+
+.user-result .language.italian:before {
+  background: url(../img/languages-mini.png);
+}
+
+
+.user-result .location {
+  font-size: .9em;
 }
