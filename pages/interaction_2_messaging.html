@@ -89,18 +89,38 @@
       <p>Say hi to <span class="messageUser"></span> before stopping by.</p>
 
       <!-- Messaging client here -->
+      <div class="row">
+        <div class="span6 offset2">
+          <div class="messaging-updates text-left">Loading messages ...</div>
+        </div>
+        <div class="span2">
+        </div>
+      </div>
 
-      <form style="" method="get" action="registration_4_signedup.html" name="submitbox">
-        <input id="messageText" class="row-fluid" type="text" name="firstname"><br>
+      <br>
 
-        <button type="submit" class="pull-left btn btn-primary">Send <i class="icon-envelope icon-white"></i></button>
+      <form style="" method="get" action="interaction_2_messaging.html" name="submitbox">
+        <div class="row">
+          <div class="span6 offset2">
+            <input id="messageText" class="row-fluid" type="text" name="messageText"><br>
+          </div>
+          <div class="span2 pagination-centered">
+            <button type="submit" class=" btn btn-primary">Send message <i class="icon-envelope icon-white"></i></button>
+          </div>
+          <div class="span1">
+          </div>
+        </div>
+
+        
 
       </form>
 
-      <div class="messaging-client">Messaging client here</div>
+      <br><br>
+
 
       <a href="interaction_1_results.html">
-        <button type="submit" class="btn">Back to contacts</button>
+        <button type="submit" id="submitMessage" class="btn btn-small"><i class="icon-arrow-left icon-grey"></i> Back to contacts</button></button>
+
       </a>
 
     </div> <!-- /container -->
