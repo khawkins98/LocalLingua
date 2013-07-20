@@ -139,7 +139,7 @@
             var value = $(element).val();
             var inputType = this.options.multiple ? "checkbox" : "radio";
 
-            var $li = $('<li><a href="javascript:void(0);"><label class="' + inputType + '"><input type="' + inputType + '" /></label></a></li>');
+            var $li = $('<li class="' + value + '"><a href="javascript:void(0);"><label class="' + inputType + '"><input type="' + inputType + '" /></label></a></li>');
 
             var selected = $(element).prop('selected') || false;
             var $checkbox = $('input', $li);
