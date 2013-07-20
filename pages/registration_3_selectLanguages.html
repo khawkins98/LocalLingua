@@ -100,27 +100,7 @@
       <!-- Language select options -->
 
       <form style="" method="get" action="registration_4_signedup.html" name="submitbox">
-        <div class="language-offered" id="language-field">
-
-<script>
-var xhr = new XMLHttpRequest();
-//xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs-list');
-xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs/list?code=sampleCode');
-xhr.onreadystatechange = function () {
-  if (this.readyState == 4) {
-    if (typeof cb !== "undefined") {
-      cb(this);
-    }
-    else {
-      jQuery.parseJSON(this.responseText);
-      alert( obj.name === "John" );
-
-//      alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
-    }
-  }
-};
-xhr.send(null);
-</script>          
+        <div class="language-offered" id="language-field">    
 
           <select name="multiselect-learn" class="multiselect-learn" multiple="multiple" required
             data-validation-required-message="ack">
