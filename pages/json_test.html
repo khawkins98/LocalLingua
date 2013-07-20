@@ -41,29 +41,36 @@
       
       <!-- Page content here -->
 
-<script>
-var xhr = new XMLHttpRequest();
-//xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs-list');
-xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs/change?code=sampleCode');
-xhr.onreadystatechange = function () {
-  if (this.readyState == 4) {
-    if (typeof cb !== "undefined") {
-      cb(this);
-    }
-    else {
-      var obj = jQuery.parseJSON(this.responseText);
-      alert( obj );
+      <script>
+      var xhr = new XMLHttpRequest();
+      //grab the json
+      xhr.open('GET', 'http://api-tandem.rhcloud.com/api/langs/list?code=sampleCode');
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (typeof cb !== "undefined") {
+            cb(this);
+          }
+          else {
+            var obj = jQuery.parseJSON(this.responseText);
+            console.log('success');
 
-//      alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
-    }
-  }
-};
-xhr.send(null);
-</script>    
+            //insert the code into the document
+
+            $.each(obj,function(i,obj){
+                $('.injectHere').append('<div>'+obj.id+' '+obj.name+' '+obj.shortname+'</div>');
+            });
+
+            //alert( obj );
+            //alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
+          }
+        }
+      };
+      xhr.send(null);
+      </script>    
 
 
       <h1>testing 1 2 3</h1>
-      <p>see above.</p>
+      <div class="injectHere"></div>
 
 
     </div> <!-- /container -->

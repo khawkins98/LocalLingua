@@ -222,7 +222,7 @@ textarea {
 }
 
 body {
-  margin: 0;
+  margin: 0 0 5% 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -6230,26 +6230,31 @@ a.badge:focus {
   position: relative;
 }
 
+#language-field .dropdown-menu li.rowclass-1 .icon,
 #language-field .dropdown-menu li.english .icon {
   background: url(../img/languages.jpg);
   background-position: -144px 0;
 }
 
+#language-field .dropdown-menu li.rowclass-23 .icon,
 #language-field .dropdown-menu li.german .icon {
   background: url(../img/languages.jpg);
   background-position: -48px 0;
 }
 
+#language-field .dropdown-menu li.rowclass-27 .icon,
 #language-field .dropdown-menu li.spanish .icon {
   background: url(../img/languages.jpg);
   background-position: 0 0;
 }
 
+#language-field .dropdown-menu li.rowclass-51 .icon,
 #language-field .dropdown-menu li.italian .icon {
   background: url(../img/languages.jpg);
   background-position: -240px 0;
 }
 
+#language-field .dropdown-menu li.rowclass-34 .icon,
 #language-field .dropdown-menu li.french .icon {
   background: url(../img/languages.jpg);
   background-position: -96px 0;

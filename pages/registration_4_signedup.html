@@ -38,6 +38,51 @@
 
     <div class="container text-center">
 
+      <!-- Submit signups -->
+
+      <script type="text/javascript">
+
+      // A handy script to grab url paramaters and return as a comma seperated, if needed
+      function getParameter(paramName) {
+        var searchString = window.location.search.substring(1),
+          i, val, params = searchString.split("&");
+
+        result = '';
+
+        for (i=0;i<params.length;i++) {
+          val = params[i].split("=");
+          if (val[0] == paramName) {
+            if (result == '') {
+              result = unescape(val[1]);
+            } else {
+              result = result + ', ' + unescape(val[1]);
+            }
+          }
+        }
+        return result;
+      }
+
+
+      multiselectLearn = (getParameter('multiselect-learn') );
+      multiselectKnow = (getParameter('multiselect-know') );
+
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', 'http://api-tandem.rhcloud.com/api/langs/change?code=sampleCode');
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          if (typeof cb !== "undefined") {
+            cb(this);
+          }
+          else {
+            //alert('Status: '+this.status+'\nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'\nBody: '+this.responseText);
+          }
+        }
+      };
+      xhr.send("{\n    \"offered\": [" + multiselectKnow + "],\n    \"desired\": [" + multiselectLearn + "]\n}");
+
+      </script>
+
       <!-- Page content here -->
 
       <img src="../img/logo-ok.png" class="logo" style="position:relative; left: 2%">
